@@ -1,0 +1,26 @@
+name: Validate Repository Structure
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Confirm required planning documents exist
+        run: |
+          echo "Checking for required Part 1 files in /docs..."
+
+          test -f docs/ERD.pdf && echo "Found docs/ERD.pdf" || (echo "Missing docs/ERD.pdf" && exit 1)
+          test -f docs/APIEndpointPlan.pdf && echo "Found docs/APIEndpointPlan.pdf" || (echo "Missing docs/APIEndpointPlan.pdf" && exit 1)
+          test -f docs/RaceDayDatabase.sql && echo "Found docs/RaceDayDatabase.sql" || (echo "Missing docs/RaceDayDatabase.sql" && exit 1)
+
+          test -f README.md && echo "Found README.md" || (echo "Missing README.md" && exit 1)
+
+          echo "All required files are present."
