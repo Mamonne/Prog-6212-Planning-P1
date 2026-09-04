@@ -13,13 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-     - name: Confirm required planning documents exist
-  run: |
-    echo "Checking for required Part 1 files..."
+      - name: Confirm required planning documents exist
+        run: |
+          echo "Checking for required Part 1 files in /docs..."
 
-    test -f ERD.pdf && echo "Found ERD.pdf" || (echo "Missing ERD.pdf" && exit 1)
-    test -f APIEndpointPlan.pdf && echo "Found APIEndpointPlan.pdf" || (echo "Missing APIEndpointPlan.pdf" && exit 1)
-    test -f RaceDayDatabase.sql && echo "Found RaceDayDatabase.sql" || (echo "Missing RaceDayDatabase.sql" && exit 1)
-    test -f README.md && echo "Found README.md" || (echo "Missing README.md" && exit 1)
+          test -f docs/ERD.pdf && echo "Found docs/ERD.pdf" || (echo "Missing docs/ERD.pdf" && exit 1)
+          test -f docs/APIEndpointPlan.pdf && echo "Found docs/APIEndpointPlan.pdf" || (echo "Missing docs/APIEndpointPlan.pdf" && exit 1)
+          test -f docs/RaceDayDatabase.sql && echo "Found docs/RaceDayDatabase.sql" || (echo "Missing docs/RaceDayDatabase.sql" && exit 1)
 
-    echo "All required files are present."
+          test -f README.md && echo "Found README.md" || (echo "Missing README.md" && exit 1)
+
+          echo "All required files are present."
