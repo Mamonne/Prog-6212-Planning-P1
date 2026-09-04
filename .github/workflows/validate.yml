@@ -17,7 +17,7 @@ jobs:
         run: |
           echo "Checking for required Part 1 files in /docs..."
 
-          test -f docs/ERD.pdf && echo "Found docs/ERD.pdf" || (echo "Missing docs/ERD.pdf" && exit 1)
+          test -f docs/PROG 6212 ERD.pdf && echo "Found docs/ERD.pdf" || (echo "Missing docs/ERD.pdf" && exit 1)
           test -f docs/APIEndpointPlan.pdf && echo "Found docs/APIEndpointPlan.pdf" || (echo "Missing docs/APIEndpointPlan.pdf" && exit 1)
           test -f docs/RaceDayDatabase.sql && echo "Found docs/RaceDayDatabase.sql" || (echo "Missing docs/RaceDayDatabase.sql" && exit 1)
 
