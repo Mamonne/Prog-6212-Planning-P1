@@ -17,9 +17,9 @@ jobs:
         run: |
           echo "Checking for required Part 1 files in /docs..."
 
-          test -f docs/"PROG 6212 P1 ERD.pdf" && echo "Found docs/ERD.pdf" || (echo "Missing docs/ERD.pdf" && exit 1)
-          test -f docs/"API ENDPOINT PLAN.pdf" && echo "Found docs/APIEndpointPlan.pdf" || (echo "Missing docs/APIEndpointPlan.pdf" && exit 1)
-          test -f docs/"RaceDay PROG 6212.sql" && echo "Found docs/RaceDayDatabase.sql" || (echo "Missing docs/RaceDayDatabase.sql" && exit 1)
+          test -f docs/ERD.pdf && echo "Found docs/ERD.pdf" || (echo "Missing docs/ERD.pdf" && exit 1)
+          test -f docs/APIEndpointPlan.pdf && echo "Found docs/APIEndpointPlan.pdf" || (echo "Missing docs/APIEndpointPlan.pdf" && exit 1)
+          test -f docs/RaceDayDatabase.sql && echo "Found docs/RaceDayDatabase.sql" || (echo "Missing docs/RaceDayDatabase.sql" && exit 1)
 
           test -f README.md && echo "Found README.md" || (echo "Missing README.md" && exit 1)
 
